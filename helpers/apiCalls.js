@@ -5,9 +5,9 @@ const getPokemon = async(id) => {
     return pokemon;
 }
 
-const getPokemonList = async (quantity) => {
+const getPokemonList = async (limit,offset) => {
     let pokemonList = [];
-    for(let i=1;i<=quantity;i++){
+    for(let i=offset;i<(limit+offset);i++){
         let pokemon = await getPokemon(i);
         pokemonList.push(pokemon)
     }
