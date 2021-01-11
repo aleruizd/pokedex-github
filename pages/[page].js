@@ -17,16 +17,40 @@ export default function Home(props) {
       </Head>
       <Header/>
       <PokemonCardList pokemonList={props.pokemonList}/>
-      <Pagination pages={5}/>
+      <Pagination pages={props.pages} actualPage={props.actualPage}/>
     </div>
   )
 }
 
-export async function getStaticProps(){
-  let pokemonList = await getPokemonList(9,1);
+export async function getStaticPaths(){
+  let paths = [];
+
+  for(let i=1;i<=26;i++){
+    paths.push({
+      params: {
+        page: i.toString()
+      }
+    })
+  }
 
   return {
+    paths,
+    fallback: false
+  }
+}
+
+export async function getStaticProps({params}){
+  let page = parseInt(params.page);
+  let limit = 6;
+  let offset;
+  (page > 1) ? offset = (limit*(page-1))+1 : offset = page 
+  let pokemonList = await getPokemonList(limit,offset);
+
+  
+  return {
       props: {
+        actualPage: page,
+        pages: 26,
         pokemonList
     }
   }

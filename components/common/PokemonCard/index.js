@@ -1,7 +1,6 @@
 import styles from './PokemonCard.module.css'
 import type from '../../../styles/TypeColors.module.css'
 import {capitalize} from '../../../helpers'
-import { useEffect, useState } from 'react'
 
 export default function PokemonCard({pokemon}){
     return(
