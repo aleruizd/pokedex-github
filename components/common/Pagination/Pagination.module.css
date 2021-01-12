@@ -12,3 +12,12 @@
     margin: 0 1rem;
 }
 
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.icon > :first-child{
+    width: 1rem;
+}
+

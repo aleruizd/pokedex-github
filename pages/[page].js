@@ -13,7 +13,6 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com"/>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet"/>
-        <script src="https://kit.fontawesome.com/cc4e947371.js" crossorigin="anonymous"></script> 
       </Head>
       <Header/>
       <PokemonCardList pokemonList={props.pokemonList}/>
@@ -43,9 +42,11 @@ export async function getStaticProps({params}){
   let page = parseInt(params.page);
   let limit = 6;
   let offset;
-  (page > 1) ? offset = (limit*(page-1))+1 : offset = page 
-  let pokemonList = await getPokemonList(limit,offset);
+  (page > 1) ? offset = (limit*(page-1))+1 : offset = page
+  
+  if(page == 26) limit = 1;
 
+  let pokemonList = await getPokemonList(limit,offset);
   
   return {
       props: {
