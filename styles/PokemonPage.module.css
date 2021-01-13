@@ -36,6 +36,9 @@
 }
 
 @media (min-width: 480px){
+    .container {
+        padding: 0;
+    }
     .photo{
         width: 33rem;
     }
