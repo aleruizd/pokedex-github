@@ -35,11 +35,8 @@ export async function getStaticPaths(){
 
 export async function getStaticProps({params}){
   let page = parseInt(params.page);
+  let offset = page - 1;
   let limit = 6;
-  let offset;
-  (page > 1) ? offset = (limit*(page-1))+1 : offset = page
-  
-  if(page == 26) limit = 1;
 
   let pokemonList = await getPokemonList(limit,offset);
   
