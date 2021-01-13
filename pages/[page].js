@@ -1,9 +1,7 @@
-import PageHead from '../components/layout/PageHead'
 import styles from '../styles/Home.module.css'
-import PokemonCardList from '../components/layout/PokemonCardList'
-import Header from '../components/layout/Header'
-import Pagination from '../components/common/Pagination'
+import {Pagination} from '../components/common'
 import {getPokemonList} from '../helpers'
+import {PageHead,PokemonCardList,Header} from '../components/layout'
 
 export default function Home(props) {
   return (

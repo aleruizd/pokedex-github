@@ -1,5 +1,5 @@
 import styles from './PokemonCardList.module.css'
-import PokemonCard from '../../common/PokemonCard'
+import PokemonCard from '../../common/PokemonCard/PokemonCard'
 
 export default function PokemonCardList({pokemonList}){
     return(

@@ -27,3 +27,10 @@
         width: initial;
     }
 }
+
+.actualPage {
+    padding: 0.3rem 0.5rem;
+    border-radius: .3rem;
+    color: white;
+    background: #1976D2;
+}

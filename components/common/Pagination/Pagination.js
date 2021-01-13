@@ -9,14 +9,12 @@ export default function Pagination({pages,actualPage}){
 
     useEffect(() => {
         let pageList = [];
-        if(actualPage >= 4){
-            for(let i=actualPage-2;i<=actualPage;i++){
-                pageList.push(i);
-            }
-        }else{
-            for(let i=1;i<=3;i++){
-                pageList.push(i);
-            }
+        if(actualPage <= 2){
+            pageList = [1,2,3]
+        }else if(actualPage > 2 && actualPage < pages){
+            pageList = [actualPage-1,actualPage,actualPage+1]
+        }else if(actualPage == pages){
+            pageList = [actualPage-2,actualPage-1,actualPage]
         }
         setPageList(pageList)
     },[actualPage])
@@ -29,7 +27,7 @@ export default function Pagination({pages,actualPage}){
                 </Link>
             }
             
-            {actualPage >= 4 &&
+            {actualPage > 2 &&
                 <>
                     <Link href="/1"><a>1</a></Link>
                     <p>...</p>
@@ -37,10 +35,12 @@ export default function Pagination({pages,actualPage}){
             }
             
             {pageList.map(page => {
+                if(page == actualPage)
+                    return <Link href={`/${page}`} key={page}><a className={styles.actualPage}>{page}</a></Link>
                 return <Link href={`/${page}`} key={page}><a>{page}</a></Link>
             })}
 
-            {actualPage < pages &&
+            {actualPage < pages-1 &&
                 <>
                     <p>...</p>
                     <Link href={`/${pages}`}><a>{pages}</a></Link>

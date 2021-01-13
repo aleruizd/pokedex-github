@@ -1,10 +1,7 @@
 import styles from '../../styles/PokemonPage.module.css'
-import type from '../../styles/TypeColors.module.css'
 import { capitalize } from '../../helpers/stringFunctions'
-import PageHead from '../../components/layout/PageHead'
-import Header from '../../components/layout/Header'
-import TypeItem from '../../components/common/TypeItem'
-import Stats from '../../components/common/Stats'
+import { Stats,TypeItem } from '../../components/common';
+import { PageHead,Header } from '../../components/layout'
 
 export default function PokemonPage({ pokemon }) {
     return (
