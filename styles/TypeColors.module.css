@@ -2,126 +2,62 @@
     background:#8DD851;
 }
 
-.grass:hover {
-    background:#74b143;
-}
-
 .fire {
     background:#FA5543;
-}
-
-.fire:hover {
-    background:#c74132;
 }
 
 .water {
     background: #56AEFF;
 }
 
-.water:hover {
-    background: #4893da;
-}
-
 .bug {
     background: #C3D21F;
-}
-
-.bug:hover {
-    background: #a6b31a;
 }
 
 .normal{
     background: #BDBDAE;
 }
 
-.normal:hover{
-    background: #99998d;
-}
-
 .poison {
     background: #A55B9C;
-}
-
-.poison:hover {
-    background: #8b4d84;
 }
 
 .electric {
     background: #FDE53C;
 }
 
-.electric:hover {
-    background: #e2ce36;
-}
-
 .ground {
     background: #E9C855;
-}
-
-.ground:hover {
-    background: #d3b54c;
 }
 
 .flying {
     background: #79A4FF;
 }
 
-.flying:hover {
-    background: #688ddf;
-}
-
 .fairy {
     background: #F9ADFF;
-}
-
-.fairy:hover {
-    background: #d290d6;
 }
 
 .fighting {
     background: #A85644;
 }
 
-.fighting:hover {
-    background: #924a3a;
-}
-
 .psychic {
     background: #F562B1;
-}
-
-.psychic:hover {
-    background: #d35497;
 }
 
 .rock {
     background: #CEBD72;
 }
 
-.rock:hover {
-    background: #b1a261;
-}
-
 .ghost {
     background: #7874D5;
-}
-
-.ghost:hover {
-    background: #6562b8;
 }
 
 .ice {
     background: #96F1FF;
 }
 
-.ice:hover {
-    background: #81d2df;
-}
-
 .dragon {
     background: #8A75FF;
-}
-
-.dragon:hover {
-    background: #7663dd;
 }

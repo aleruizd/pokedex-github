@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import PageHead from '../components/layout/PageHead'
 import styles from '../styles/Home.module.css'
 import PokemonCardList from '../components/layout/PokemonCardList'
 import Header from '../components/layout/Header'
@@ -8,12 +8,7 @@ import {getPokemonList} from '../helpers'
 export default function Home(props) {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.gstatic.com"/>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet"/>
-      </Head>
+      <PageHead/>
       <Header/>
       <PokemonCardList pokemonList={props.pokemonList}/>
       <Pagination pages={props.pages} actualPage={props.actualPage}/>
