@@ -1,0 +1,12 @@
+.result{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: white;
+    width: 100%;
+    border: 0.1rem solid #eeeeee;
+}
+
+.result:hover{
+    background: #eeeeee;
+}

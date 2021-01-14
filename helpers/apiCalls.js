@@ -20,6 +20,12 @@ const getPokemonList = async (limit,offset) => {
     return pokemonList;
 }
 
+const getPokemonNameList = async(limit) => {
+    let res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=0`);
+    return res.json();
+}
+
 export {
-    getPokemonList
+    getPokemonList,
+    getPokemonNameList
 }

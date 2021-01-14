@@ -1,6 +1,6 @@
 import styles from '../styles/Home.module.css'
-import {Pagination} from '../components/common'
-import {getPokemonList} from '../helpers'
+import {Pagination, Searcher} from '../components/common'
+import {getPokemonList, getPokemonNameList} from '../helpers'
 import {PageHead,PokemonCardList,Header} from '../components/layout'
 
 export default function Home(props) {
@@ -8,6 +8,7 @@ export default function Home(props) {
     <div className={styles.container}>
       <PageHead/>
       <Header/>
+      <Searcher pokemonNameList={props.pokemonNameList}/>
       <PokemonCardList pokemonList={props.pokemonList}/>
       <Pagination pages={props.pages} actualPage={props.actualPage}/>
     </div>
@@ -37,12 +38,14 @@ export async function getStaticProps({params}){
   let limit = 6;
 
   let pokemonList = await getPokemonList(limit,offset);
+  let pokemonNameList = await getPokemonNameList(151);
   
   return {
       props: {
         actualPage: page,
         pages: 26,
-        pokemonList
+        pokemonList,
+        pokemonNameList: pokemonNameList.results
     }
   }
 }
